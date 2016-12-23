@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center|left"
+    android:background="@color/colorPrimary" >
+
+    <ImageView
+        android:id="@+id/status_bar_album_art"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:gravity="center" />
+
+    <ImageView
+        android:id="@+id/status_bar_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_launcher"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="11dp" >
+
+        <TextView
+            android:id="@+id/status_bar_track_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:fontFamily="sans-serif-light"
+            android:ellipsize="marquee"/>
+
+        <TextView
+            android:id="@+id/status_bar_artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:ellipsize="marquee"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/status_bar_play"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:contentDescription="Play and Pause"
+        android:paddingRight="10dp"/>
+
+</LinearLayout>

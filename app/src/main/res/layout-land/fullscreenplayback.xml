@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:clipToPadding="false"
+    android:id="@+id/flplayback">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowRadius="1.0"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/tvvideonamefull"/>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/snackbarlocation">
+    </android.support.design.widget.CoordinatorLayout>
+
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:id="@+id/flcontrolpanel">
+
+        <FrameLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:alpha="0.8"
+            android:layout_gravity="bottom">
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="left">
+
+                <ImageButton
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/rotate"
+                    android:id="@+id/ibrotate"/>
+
+                <ImageButton
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/prev"
+                    android:id="@+id/ibprevfull"/>
+
+                <ImageButton
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/pause"
+                    android:id="@+id/ibplayfull"/>
+
+                <ImageButton
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/next"
+                    android:id="@+id/ibnextfull"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:text="00:00 / 00:00"
+                    android:gravity="center"
+                    android:id="@+id/tvvideotimer"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FFFFFF"/>
+
+                <ImageButton
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/gofloat"
+                    android:id="@+id/ibgofloat"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/sbvideo"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="51dp"/>
+
+    </FrameLayout>
+
+    <ProgressBar
+        style="@style/AppTheme"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/pbvideofull"/>
+
+    <SeekBar
+        android:layout_height="125dp"
+        android:layout_width="117dp"
+        android:id="@+id/sbbrightness"
+        android:layout_gravity="center|left"
+        android:rotation="270"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+        android:enabled="false"
+        android:alpha="0.0"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/tvbrightness"
+        android:text="Brightness"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        android:background="@drawable/circularshapeblack"/>
+
+    <VideoView
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:id="@+id/vvplaybackfull"/>
+
+
+</FrameLayout>

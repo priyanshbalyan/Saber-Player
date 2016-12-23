@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/flfloatingplayback">
+
+    <VideoView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@android:drawable/ic_delete"
+        android:id="@+id/vfloatplayback"
+        android:layout_gravity="center"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/flfloatingcontrols">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom|left">
+
+            <ImageView
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/prev"
+                android:id="@+id/ibfloatprev"/>
+
+            <ImageView
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/pause"
+                android:id="@+id/ibfloatplay"/>
+
+            <ImageView
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/next"
+                android:id="@+id/ibfloatnext"/>
+
+            <ImageView
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gofull"
+                android:id="@+id/ibgofull"
+                android:padding="5dp"/>
+
+            <ImageView
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/resize"
+                android:layout_gravity="bottom|right"
+                android:id="@+id/ibresize"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/close"
+            android:id="@+id/ibclose"
+            android:layout_gravity="bottom|right"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Text"
+            android:layout_gravity="center|top"
+            android:id="@+id/tvfloatingvideo"
+            android:textColor="#FFFFFF"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif-light"
+            android:shadowColor="#000000"
+            android:shadowRadius="1.0"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/sbfloatingvideo"/>
+
+    </FrameLayout>
+
+</FrameLayout>
+

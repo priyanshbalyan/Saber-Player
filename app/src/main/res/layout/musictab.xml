@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:id="@+id/musictabalbumdetail"
+            android:clipToPadding="false"
+            android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.priyanshbalyan.saber.SquareImageView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/defaultalbumimage"
+                        android:id="@+id/ivmusictabalbumart"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Album details"
+                        android:id="@+id/tvmusictabalbumdetails"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:padding="16dp"
+                        android:maxLines="5"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="left|center"/>
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="4dp"
+            android:paddingBottom="58dp"
+            android:clipToPadding="false"
+            android:id="@+id/rvalbum"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

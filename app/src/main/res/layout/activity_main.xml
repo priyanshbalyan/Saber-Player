@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.priyanshbalyan.saber.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoDragView="@+id/ivmpalbumart"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="54dp"
+    sothree:umanoParallaxOffset="100dp"
+    sothree:umanoScrollableView="@+id/playbackview"
+    sothree:umanoShadowHeight="4dp">
+
+    <!--Main Content-->
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabMode="fixed" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+    <!--<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />-->
+
+    <!-- Sliding Layout -->
+    <LinearLayout
+        android:id="@+id/dragView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:focusable="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/playbackview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+                <com.priyanshbalyan.saber.SquareImageView
+                    android:id="@+id/ivmpalbumart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/defaultalbumimage" />
+
+                <TextView
+                    android:id="@+id/tvdrawertrackname"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_gravity="top"
+                    android:background="#66000000"
+                    android:ellipsize="marquee"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center|left"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:padding="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Track Name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <SeekBar
+                    android:id="@+id/sbtrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom" />
+
+                <TextView
+                    android:id="@+id/tvmpcurrentduration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:layout_margin="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="1.0"
+                    android:text="00:00"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvmptotalduration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="1.0"
+                    android:text="00:00"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#FFFFFF" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvtracklist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:clipToPadding="false"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="4dp"
+                    android:visibility="invisible"
+                    android:clipChildren="false"
+                    android:clickable="false"
+                    android:focusableInTouchMode="true" />
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/maincontrollayout"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:id="@+id/ibtracklist"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/playlist"
+                    android:visibility="visible" />
+
+                <ImageButton
+                    android:id="@+id/ibmpprev"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/prev" />
+
+                <ImageButton
+                    android:id="@+id/ibmpplay"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/pause" />
+
+                <ImageButton
+                    android:id="@+id/ibmpnext"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/next" />
+
+                <ImageButton
+                    android:id="@+id/ibshuffle"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/shuffle"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:id="@+id/maintracklayout"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tvmptrackname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:ellipsize="marquee"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Text"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tvmpartistname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Text"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.priyanshbalyan.saber.SlidingUpPanelLayout>
